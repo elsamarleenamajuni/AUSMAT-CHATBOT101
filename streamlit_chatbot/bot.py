@@ -26,11 +26,11 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-user_emoji = "chill.jpg"
-robot_img = "duck2.jpg"
+user_emoji = "streamlit_chatbot/chill.jpg"
+robot_img = "streamlit_chatbot/duck2.jpg"
 
 # Configure Gemini API
-GOOGLE_API_KEY = "AIzaSyBjsWHkftOtaFBx2b9DqyYInhfB6t8IT4M"
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-2.5-flash')
 
@@ -76,7 +76,7 @@ if page == "Chat":
     def main():
         col1, col2 = st.columns([1, 6])
         with col1:
-            st.image("duck-removebg-preview.png", width=100)
+            st.image("streamlit_chatbot/duck-removebg-preview.png", width=100)
         with col2:
             st.title("Mr. Quack")
 
